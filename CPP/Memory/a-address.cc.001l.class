@@ -1,0 +1,44 @@
+Vtable for A
+A::_ZTV1A: 3 entries
+0     (int (*)(...))0
+8     (int (*)(...))(& _ZTI1A)
+16    (int (*)(...))A::func1
+
+Class A
+   size=8 align=8
+   base size=8 base align=8
+A (0x0x7f2d739c7420) 0 nearly-empty
+    vptr=((& A::_ZTV1A) + 16)
+
+Vtable for B
+B::_ZTV1B: 3 entries
+0     (int (*)(...))0
+8     (int (*)(...))(& _ZTI1B)
+16    (int (*)(...))B::func2
+
+Class B
+   size=8 align=8
+   base size=8 base align=8
+B (0x0x7f2d739c75a0) 0 nearly-empty
+    vptr=((& B::_ZTV1B) + 16)
+
+Vtable for C
+C::_ZTV1C: 7 entries
+0     (int (*)(...))0
+8     (int (*)(...))(& _ZTI1C)
+16    (int (*)(...))A::func1
+24    (int (*)(...))C::func3
+32    (int (*)(...))-8
+40    (int (*)(...))(& _ZTI1C)
+48    (int (*)(...))B::func2
+
+Class C
+   size=16 align=8
+   base size=16 base align=8
+C (0x0x7f2d739d80e0) 0
+    vptr=((& C::_ZTV1C) + 16)
+A (0x0x7f2d739c7660) 0 nearly-empty // A和C共用一张虚函数表
+      primary-for C (0x0x7f2d739d80e0)
+B (0x0x7f2d739c76c0) 8 nearly-empty
+      vptr=((& C::_ZTV1C) + 48)
+
