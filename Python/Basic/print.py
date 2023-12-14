@@ -1,0 +1,5 @@
+print('hello world')
+fp = open("note.txt", 'w')
+print('this is note file', file = fp)
+fp.close()
+print('hello' + ' ' + 'world' + ' again')
