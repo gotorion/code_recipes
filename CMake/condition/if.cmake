@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.10)
+set(VARBOOL TRUE)
+if(VARBOOL)
+    message(TRUE)
+else()
+    message(FALSE)
+endif()
+
+if(NOT VARBOOL AND VARBOOL)
+    message(NOT)
+else()
+    message(NOT AND)
+endif()
+
+if(1 LESS 2)
+    message("1 LESS 2")
+endif()
