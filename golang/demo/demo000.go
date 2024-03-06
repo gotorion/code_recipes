@@ -11,6 +11,9 @@ var (
 )
 
 func main() {
+	/*print global varibles*/
+	fmt.Println("g_name = ", g_name)
+	fmt.Println("g_number = ", g_number)
 	// local varibles
 	var num int = 10
 	fmt.Println("num = ", num)
