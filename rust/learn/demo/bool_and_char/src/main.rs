@@ -10,7 +10,21 @@ fn test_bool() {
     println!("a = {} and b = {}", a , b);
 }
 
+fn test_return(a: i32, b: i32) -> i32 {
+    a + b
+    // equals return a + b;
+}
+
+fn test_diverge_func() -> ! {
+    loop {
+        println!("this is in loop");
+    }
+}
+
 fn main() {
     // test_char();
-    test_bool();
+    // test_bool();
+    let sum = test_return(10, 20);
+    println!("sum = {}", sum);
+    test_diverge_func();
 }
