@@ -8,6 +8,14 @@ fn greet_world() {
     }
 }
 
+fn len_and_count() -> () {
+    let slice = "hello";
+    println!("byte of slice = {} and length of slice = {}", slice.len(), slice.chars().count());
+    let slice_1 = "你好";
+    println!("byte of slice_1 = {} and length of slice_1 = {}", slice_1.len(), slice_1.chars().count());
+}
+
 fn main() {
-    greet_world();
+    // greet_world();
+    len_and_count();
 }
