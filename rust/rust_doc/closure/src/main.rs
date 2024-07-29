@@ -75,8 +75,18 @@ fn test_capture() {
     //    list; // error
 }
 
+fn example_closure() {
+    let example = |x| x;
+    let s = example(String::from("Hello"));
+    println!("{}", s);
+    // let n = example(3); // error
+}
+
+
+
 fn main() {
-    test_shirt();
-    test_auto_deduct();
-    test_capture();
+    //  test_shirt();
+    //  test_auto_deduct();
+    //  test_capture();
+    //  example_closure();
 }
