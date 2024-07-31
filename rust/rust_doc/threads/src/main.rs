@@ -1,3 +1,4 @@
+use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
 fn use_handle() {
@@ -21,7 +22,27 @@ fn move_thread() {
     });
     handle.join().unwrap();
 }
+
+fn use_channel() {
+    let (tx, rx) = mpsc::channel();
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("Hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];
+        for val in vals {
+            tx.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+    for receive in rx {
+        println!("Got: {receive}");
+    }
+}
 fn main() {
     use_handle();
     move_thread();
+    use_channel();
 }
